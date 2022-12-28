@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="functions.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <title>Encrypted Message</title>
+</head>
+<body>
+  <form>
+    <label for="message">Enter message:</label><br>
+    <input type="text" id="message"><br>
+    <button onclick="encryptMessage()">Encrypt</button>
+  </form>
+  <br>
+  <button onclick="location.href='menu.html'">View Menu</button>
+  <p id="encryptedMessage"></p>
+  <script>
+    function encryptMessage() {
+      // Get the message from the input field
+      var message = document.getElementById('message').value;
+      // Convert the message to a base64-encoded string
+      var encryptedMessage = btoa(message);
+      // Display the encrypted message on the page
+      document.getElementById('encryptedMessage').innerHTML = encryptedMessage;
+    }
+  </script>
+</body>
+</html>

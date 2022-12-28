@@ -1,0 +1,19 @@
+{
+    "name": "encrypted-message",
+    "version": "1.0.0",
+    "description": "A web application for encrypting and storing messages",
+    "main": "index.js",
+    "scripts": {
+      "start": "node index.js",
+      "install": "npm install"
+    },
+    "dependencies": {
+      "express": "^4.17.1",
+      "mongodb": "^3.7.5",
+      "nodemailer": "^6.5.2",
+      "@sendgrid/mail": "^7.5.2"
+    },
+    "devDependencies": {
+      "nodemon": "^2.0.6"
+    }
+  }

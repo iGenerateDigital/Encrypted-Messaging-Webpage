@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Menu</title>
+</head>
+<body>
+  <h1>Menu</h1>
+  <form id="menuForm">
+    <label for="items">Items:</label><br>
+    <textarea id="items" name="items" rows="10" cols="50"></textarea><br>
+    <button type="submit">Submit</button>
+  </form>
+  <!-- Add the button inside the body of the HTML file -->
+  <button onclick="location.href='index.html'">Back to Home</button>
+
+  <script>
+    // Send a POST request to the backend to store the list of items
+    document.getElementById('menuForm').addEventListener('submit', (event) => {
+      event.preventDefault();
+      const items = document.getElementById('items').value;
+      fetch('/api/menu', {
+        method: 'POST',
+        body: JSON.stringify({ items }),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          alert('Menu updated successfully');
+        } else {
+          alert('Error updating menu');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
